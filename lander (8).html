@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"><title>Reco Social</title><link rel="icon" href="data:,"><link rel="dns-prefetch" href="https://taprkr.com"><link rel="preconnect" href="https://taprkr.com"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#080808;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+body{display:flex;justify-content:center}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:#7c5cfc;z-index:999}
+.page{width:100%;max-width:430px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding-bottom:150px}
+.page>*{flex-shrink:0}
+.ticker{background:#0c0c0c;border-bottom:1px solid #141414;padding:9px 16px;text-align:center;font-size:13px;color:#999;margin-top:3px;display:flex;align-items:center;justify-content:center}
+.ticker-name{font-weight:600;color:#eee}
+.ticker-amount{font-weight:700;color:#2cc76e}
+.ticker-content{will-change:opacity;transition:opacity .3s ease}
+.hero-card{position:relative;overflow:hidden;contain:layout style paint;margin:7px 14px 0;background:linear-gradient(180deg,#131313 0%,#0d0d0d 100%);border:1px solid #1a1a1a;border-radius:18px;padding:26px 20px 20px;text-align:center}
+.hero-card::before{content:'';position:absolute;top:-70px;left:50%;transform:translateX(-50%);width:300px;height:240px;background:radial-gradient(ellipse at center,rgba(124,92,252,.30) 0%,rgba(124,92,252,0) 70%);pointer-events:none}
+.hero-logo{position:relative;width:88px;height:88px;border-radius:22px;margin:0 auto 16px;display:block}
+.rating-pill{position:relative;display:inline-flex;align-items:center;gap:5px;background:rgba(124,92,252,.06);border:1px solid rgba(124,92,252,.28);border-radius:99px;padding:6px 15px;margin-bottom:18px}
+.rating-stars{font-size:11px;color:#7c5cfc;line-height:1}
+.rating-num{font-size:12px;font-weight:700;color:#fff}
+.rating-sep{font-size:12px;color:#555}
+.rating-store{font-size:12px;font-weight:500;color:#ccc}
+.rating-reviews{font-size:12px;color:#777}
+.hero-title{font-size:34px;font-weight:900;color:#fff;line-height:1.08;letter-spacing:-.6px}
+.hero-title-accent{font-size:34px;font-weight:900;color:#7c5cfc;line-height:1.08;letter-spacing:-.6px;margin-bottom:14px}
+.hero-desc{font-size:14px;color:#8a8a8a;line-height:1.55;max-width:300px;margin:0 auto 16px}
+.live-pill{position:relative;display:inline-flex;align-items:center;gap:7px;background:rgba(44,199,110,.06);border:1px solid rgba(44,199,110,.18);border-radius:99px;padding:6px 15px}
+.live-dot{will-change:opacity;width:6px;height:6px;border-radius:50%;background:#2cc76e;animation:b 1.8s ease infinite;flex-shrink:0}
+@keyframes b{0%,100%{opacity:1}50%{opacity:.3}}
+.live-num{font-size:13px;font-weight:700;color:#2cc76e}
+.live-text{font-size:13px;font-weight:600;color:#2cc76e}
+.game-card{contain:layout style paint;margin:10px 14px 0;background:linear-gradient(180deg,#141414 0%,#101010 100%);border:1px solid #1a1a1a;border-radius:18px;padding:16px 18px 16px}
+.game-row{display:flex;align-items:center;gap:12px}
+.game-row+.game-row{margin-top:13px;padding-top:13px;border-top:1px solid #1a1a1a}
+.game-icon{width:54px;height:54px;border-radius:14px;object-fit:cover;flex-shrink:0}
+.game-info{display:flex;flex-direction:column;gap:3px;min-width:0}
+.game-name{font-size:16px;font-weight:800;color:#fff}
+.game-rating{display:flex;align-items:center;gap:5px;font-size:12px}
+.game-stars{color:#7c5cfc;font-size:10px}
+.game-rating-num{color:#ccc;font-weight:600}
+.game-rating-label{color:#777}
+.game-pay{font-size:15px;font-weight:800;color:#2cc76e}
+.game-divider{height:1px;background:#1e1e1e;margin:16px 0}
+.game-section-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:#5a5a5a;margin-bottom:14px}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;align-items:center;gap:14px}
+.step-num{width:38px;height:38px;border-radius:11px;background:rgba(124,92,252,.10);border:1px solid rgba(124,92,252,.30);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#9b7dff;flex-shrink:0}
+.step-text{font-size:15px;font-weight:500;color:#e2e2e2}
+.trust-card{contain:layout style paint;margin:10px 14px 0;background:linear-gradient(180deg,#141414 0%,#101010 100%);border:1px solid #1a1a1a;border-radius:18px;padding:18px 10px;display:flex}
+.trust-cell{flex:1;text-align:center;padding:0 6px}
+.trust-cell+.trust-cell{border-left:1px solid #1e1e1e}
+.trust-num{font-size:21px;font-weight:900;color:#fff;line-height:1.2}
+.trust-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#666;margin-top:5px}
+.disclaimer{font-size:12px;line-height:1.6;color:#5a5a5a;text-align:center;margin:20px 22px 0}
+.footer-links{display:flex;align-items:center;justify-content:center;gap:9px;margin:16px 0 22px;font-size:13px}
+.footer-links a{color:#8a8a8a;text-decoration:none;font-weight:500}
+.footer-links span{color:#444}
+.sticky{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;padding:0 14px;padding-bottom:max(14px,env(safe-area-inset-bottom));background:#080808;border-top:1px solid #171717;z-index:40}
+.available{display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 0 11px}
+.available-dot{will-change:opacity;width:5px;height:5px;border-radius:50%;background:#7c5cfc;animation:b 1.8s ease infinite}
+.available-text{font-size:13px;color:#c9c9c9;font-weight:600}
+.btn-row{display:flex;gap:10px}
+.store-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:12px;border-radius:16px;padding:14px 0;min-height:56px;cursor:pointer;border:none;font-family:inherit;user-select:none;-webkit-user-select:none;transition:transform .1s,opacity .1s}
+.store-btn:active{transform:scale(.97);opacity:.88}
+.btn-apple{background:#111113;border:1px solid rgba(255,255,255,.07)}
+.btn-apple svg{width:24px;height:24px;fill:#e8e8e8;flex-shrink:0}
+.btn-apple .btn-sub{font-size:10px;color:#9a9a9a;font-weight:400;line-height:1;letter-spacing:.2px}
+.btn-apple .btn-main{font-size:17px;font-weight:800;color:#f4f4f4;line-height:1.2}
+.btn-google{background:linear-gradient(100deg,#4f7bf7 0%,#a259f4 52%,#f472b6 100%);border:none}
+.btn-google svg{width:24px;height:24px;fill:#fff;flex-shrink:0}
+.btn-google .btn-sub{font-size:10px;color:rgba(255,255,255,.72);font-weight:400;line-height:1;letter-spacing:.2px}
+.btn-google .btn-main{font-size:17px;font-weight:800;color:#fff;line-height:1.2}
+.btn-text{display:flex;flex-direction:column;text-align:left;gap:2px}
+</style></head><body><div class="page">
+<div class="ticker"><span class="ticker-content" id="tc">🇺🇸 <span class="ticker-name">Carlos T.</span> just earned <span class="ticker-amount">$9.80</span> — paid instantly</span></div>
+<div class="hero-card">
+<img src="assets/reco_logo.webp" alt="Reco Social" class="hero-logo" width="88" height="88" fetchpriority="high" decoding="async">
+<div class="rating-pill"><span class="rating-stars">★★★★★</span> <span class="rating-num">4.7</span> <span class="rating-sep">·</span> <span class="rating-store">App Store</span> <span class="rating-reviews">(50K+ reviews)</span></div>
+<div class="hero-title">Get paid to</div><div class="hero-title-accent">Post &amp; Play</div>
+<p class="hero-desc">Earn real cash playing games, completing tasks, and testing apps. Cash out anytime — no minimum.</p>
+<div class="live-pill"><span class="live-dot"></span><span class="live-num" id="ln">1,845</span> <span class="live-text">people earning right now</span></div>
+</div>
+<div class="game-card">
+<div class="game-row"><svg class="game-icon" viewBox="0 0 64 64" width="54" height="54" aria-hidden="true"><defs><linearGradient id="pv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b6cff"/><stop offset="1" stop-color="#d94fd0"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#pv)"/><rect x="13" y="20" width="27" height="24" rx="6" fill="#fff" opacity=".96"/><path d="M44 26.4l8.4-4.8v20.8L44 37.6z" fill="#fff" opacity=".96"/><path d="M23.5 27.2l8.6 4.8-8.6 4.8z" fill="url(#pv)"/><circle cx="47.5" cy="47.5" r="9.6" fill="#2cc76e" stroke="#0e0e0e" stroke-width="2.6"/><text x="47.5" y="52" font-family="system-ui,-apple-system,sans-serif" font-size="12.5" font-weight="800" fill="#fff" text-anchor="middle">$</text></svg>
+<div class="game-info"><div class="game-name">Get Paid To Post Videos</div>
+<div class="game-rating"><span class="game-stars">★★★★★</span> <span class="game-rating-num">4.9</span> <span class="game-rating-label">· Top Rated</span></div>
+<div class="game-pay">Pay: $97/hour</div></div></div>
+<div class="game-row"><img src="data:image/webp;base64,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" alt="" class="game-icon" width="54" height="54" loading="lazy" decoding="async">
+<div class="game-info"><div class="game-name">Block Blast</div>
+<div class="game-rating"><span class="game-stars">★★★★★</span> <span class="game-rating-num">4.9</span> <span class="game-rating-label">· Top Rated</span></div>
+<div class="game-pay">Pay: $94/hour</div></div></div>
+<div class="game-divider"></div>
+<div class="game-section-title">How it works</div>
+<div class="steps">
+<div class="step"><div class="step-num">1</div><div class="step-text">Sign up on Reco Social (select 21+)</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-text">Play games &amp; complete tasks</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-text">Withdraw via PayPal, Visa, or Crypto</div></div>
+</div></div>
+<div class="trust-card">
+<div class="trust-cell"><div class="trust-num">$50M+</div><div class="trust-label">Paid out</div></div>
+<div class="trust-cell"><div class="trust-num">4.7★</div><div class="trust-label">App rating</div></div>
+<div class="trust-cell"><div class="trust-num">$0</div><div class="trust-label">To join</div></div>
+</div>
+<p class="disclaimer">Availability, rewards, and eligibility may vary by user, location, and completed activity. Results are not guaranteed and are based on individual participation. Earnings vary by offer.</p>
+<div class="footer-links"><a href="#" id="pp">Privacy Policy</a><span>·</span><a href="#" id="tos">Terms of Service</a></div>
+</div>
+<div class="sticky">
+<div class="available"><span class="available-dot"></span><span class="available-text">Available now on iOS and Android</span></div>
+<div class="btn-row">
+<button class="store-btn btn-apple" id="ba" type="button"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg><div class="btn-text"><span class="btn-sub">Download on the</span><span class="btn-main">App Store</span></div></button>
+<button class="store-btn btn-google" id="bg" type="button"><svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.902l2.426 1.412c.533.308.533 1.078 0 1.386l-2.257 1.313-2.394-2.394 2.225-2.717zM5.864 2.658L16.8 8.991l-2.302 2.302-8.635-8.635z"/></svg><div class="btn-text"><span class="btn-sub">Get it on</span><span class="btn-main">Google Play</span></div></button>
+</div></div>
+<script>!function(){var b="https://taprkr.com/r/eyJ0IjoicmVjb3NvY2lhbC1jcHIiLCJ0aWQiOiI2NzI3MTBjMmY0ZTMwMGY5MzY3YyIsInRzIjoxNzg5MjQ4OTkxNzk0fQ?feb=1",p=new URLSearchParams(location.search),s=p.get("s1"),f=p.get("s4"),e=[];s&&e.push("s1="+encodeURIComponent(s));f&&e.push("s4="+encodeURIComponent(f));e.length&&(b+="&"+e.join("&"));function g(){location.href=b}document.getElementById("ba").onclick=g;document.getElementById("bg").onclick=g;document.oncontextmenu=function(e){e.preventDefault()};var t=[{f:"🇺🇸",n:"Carlos T.",a:"$9.80"},{f:"🇺🇸",n:"Ashley M.",a:"$24.50"},{f:"🇺🇸",n:"Jordan P.",a:"$16.20"},{f:"🇺🇸",n:"Megan R.",a:"$41.75"},{f:"🇺🇸",n:"Tyler B.",a:"$12.90"},{f:"🇺🇸",n:"Brianna K.",a:"$33.40"},{f:"🇺🇸",n:"Devin L.",a:"$19.60"}],i=0,c=document.getElementById("tc");setInterval(function(){c.style.opacity="0";setTimeout(function(){i=(i+1)%t.length;c.innerHTML=t[i].f+' <span class="ticker-name">'+t[i].n+'</span> just earned <span class="ticker-amount">'+t[i].a+'</span> — paid instantly';c.style.opacity="1"},300)},3000);setInterval(function(){document.getElementById("ln").textContent=(1700+Math.floor(Math.random()*400)).toLocaleString("en-US")},4000)}()</script>
+</body></html>

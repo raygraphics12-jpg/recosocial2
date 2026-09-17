@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"><title>Reco Social</title><link rel="icon" href="data:,"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#080808;color:#fff;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+body{display:flex;justify-content:center;align-items:center;min-height:100vh;min-height:100dvh;overflow:hidden;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:3px;background:#7c5cfc;z-index:9}
+/* Two soft lights instead of the usual lander glare — the restraint is the point. */
+.glow{position:fixed;border-radius:50%;pointer-events:none;filter:blur(10px)}
+.g1{top:-180px;left:50%;transform:translateX(-50%);width:460px;height:340px;background:radial-gradient(ellipse at center,rgba(124,92,252,.22) 0%,rgba(124,92,252,0) 70%)}
+.g2{bottom:-220px;right:-120px;width:380px;height:300px;background:radial-gradient(ellipse at center,rgba(217,79,208,.10) 0%,rgba(217,79,208,0) 70%)}
+.page{position:relative;z-index:1;width:100%;max-width:420px;padding:40px 26px;text-align:center;animation:up .5s cubic-bezier(.2,.7,.3,1) both}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.logo{width:66px;height:66px;border-radius:18px;display:block;margin:0 auto 22px}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(124,92,252,.26);background:rgba(124,92,252,.06);border-radius:99px;padding:6px 14px;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#b6a2ff;margin-bottom:20px}
+.eyebrow i{width:5px;height:5px;border-radius:50%;background:#7c5cfc;flex-shrink:0}
+h1{font-size:29px;font-weight:900;line-height:1.14;letter-spacing:-.7px;margin-bottom:12px}
+h1 .grad{background:linear-gradient(96deg,#9b7dff 0%,#d94fd0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{font-size:14px;line-height:1.6;color:#8a8a8a;max-width:320px;margin:0 auto 34px}
+.pick{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#555;margin-bottom:13px}
+.btn{display:flex;align-items:center;gap:15px;width:100%;text-align:left;background:#111113;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:15px 18px;margin-bottom:11px;cursor:pointer;font-family:inherit;color:#fff;text-decoration:none;transition:transform .12s ease,border-color .12s ease,background .12s ease}
+.btn:active{transform:scale(.975);background:#141417}
+.btn:hover{border-color:rgba(124,92,252,.34)}
+.btn-ico{width:42px;height:42px;border-radius:12px;background:#0b0b0c;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.btn-ico svg{width:21px;height:21px;fill:#dcdcdc}
+.btn-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.btn-sm{font-size:10.5px;color:#6e6e6e;font-weight:500;letter-spacing:.2px}
+.btn-lg{font-size:15.5px;font-weight:800;color:#f2f2f2}
+.btn-arw{margin-left:auto;width:7px;height:7px;border-top:2px solid #4a4a4a;border-right:2px solid #4a4a4a;transform:rotate(45deg);flex-shrink:0}
+.foot{margin-top:26px;font-size:11.5px;color:#4a4a4a;line-height:1.6}
+.foot a{color:#6e6e6e;text-decoration:none}
+</style></head><body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<div class="page">
+  <img src="assets/reco_logo.webp" alt="Reco Social" class="logo" width="66" height="66" fetchpriority="high" decoding="async">
+  <div class="eyebrow"><i></i> Reco Social</div>
+  <h1>Get paid to <span class="grad">post &amp; play</span></h1>
+  <p class="lede">Choose your device to continue. Takes under a minute to set up, and there is nothing to pay.</p>
+  <div class="pick">Select your device</div>
+
+  <a href="#" id="ios" class="btn">
+    <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></span>
+    <span class="btn-txt"><span class="btn-sm">Continue with</span><span class="btn-lg">iPhone &amp; iPad</span></span>
+    <span class="btn-arw"></span>
+  </a>
+
+  <a href="#" id="android" class="btn">
+    <span class="btn-ico"><svg viewBox="0 0 24 24"><path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V7H6v11zM3.5 7C2.67 7 2 7.67 2 8.5v7c0 .83.67 1.5 1.5 1.5S5 16.33 5 15.5v-7C5 7.67 4.33 7 3.5 7zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48A5.84 5.84 0 0012 0c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31A5.983 5.983 0 006 7h12c0-2.21-1.24-4.15-3.47-5.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/></svg></span>
+    <span class="btn-txt"><span class="btn-sm">Continue with</span><span class="btn-lg">Android</span></span>
+    <span class="btn-arw"></span>
+  </a>
+
+  <p class="foot">Rewards and availability vary by user and location.<br><a href="#" id="pp">Privacy</a> · <a href="#" id="tos">Terms</a></p>
+</div>
+<script>!function(){
+/* Both devices go to the same page, in this same browser tab. No scheme launch,
+   no default-browser handoff — deliberately, for this lander. */
+var p=new URLSearchParams(location.search),e=[],s=p.get("s1"),f=p.get("s4");
+if(s)e.push("s1="+encodeURIComponent(s));if(f)e.push("s4="+encodeURIComponent(f));
+var u="lander.html"+(e.length?"?"+e.join("&"):"");
+document.getElementById("ios").href=u;document.getElementById("android").href=u;
+/* Warm the next page so the tap feels instant. */
+try{if(HTMLScriptElement.supports&&HTMLScriptElement.supports("speculationrules")){var r=document.createElement("script");r.type="speculationrules";r.textContent='{"prerender":[{"source":"list","urls":["'+u+'"],"eagerness":"immediate"}]}';document.head.appendChild(r)}else{var l=document.createElement("link");l.rel="prefetch";l.href=u;document.head.appendChild(l)}}catch(_){}
+document.oncontextmenu=function(e){e.preventDefault()};
+}()</script>
+</body></html>
